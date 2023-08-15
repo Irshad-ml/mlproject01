@@ -1,2 +1,4 @@
 mlproject01-env
 mlproject01.egg-info
+src/__pycache__/
+logs/08_12_2023_13_22_28.log/

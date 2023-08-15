@@ -1,5 +1,5 @@
 import sys
-import logging
+from src.logger import logging
 
 def error_message_detail(error,error_detail:sys):
     """Whenever the error raise in my code this function will be called. This function gives on which file and which line no error occurs
@@ -17,5 +17,9 @@ class CustomException(Exception):
         
     def __str__(self):
         return self.error_msg
+    
+
+    
+    
 
     
