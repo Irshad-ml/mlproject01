@@ -25,7 +25,17 @@ def get_metrics(actual_value,preidct_value):
     r2_score_value = r2_score(actual_value,preidct_value)
     return (mse,rmse,r2_score_value)
 
-    
+#This function is responsible to load the pickle file
+def load_object(file_path) :
+    try:
+        logging.info(" Both model and preproccessor pkl file  loaded")
+        with open(file_path,"rb")  as file_obj:
+            return dill.load(file_obj)
+
+    except Exception as e:
+        raise CustomException(e,sys)
+
+
 def evaluate_model(X_train,y_train,X_test,y_test,models,params):
     try:
         model_report = {}
@@ -33,6 +43,7 @@ def evaluate_model(X_train,y_train,X_test,y_test,models,params):
         for i in range(len(list(models))):
             model = list(models.values())[i]
             para  = params[list(models.keys())[i]]
+            print("hyperparameter value: ",para)
 
             gs = GridSearchCV(model,para,cv=3)
             gs.fit(X_train,y_train)

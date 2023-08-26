@@ -41,12 +41,12 @@ class ModelTrainer:
             #Define the models
             
             models = {
-                "LinearRegression":LinearRegression(),
-                "RandomForest":RandomForestRegressor(),
                 "DecisionTree":DecisionTreeRegressor(),
+                "RandomForest":RandomForestRegressor(),                
+                "GradientBoosting":GradientBoostingRegressor(),
+                "LinearRegression":LinearRegression(),
                 "CatBoost":CatBoostRegressor(),
                 "AdaBoost":AdaBoostRegressor(),
-                "GradientBoosting":GradientBoostingRegressor()
             }
             
             params={
